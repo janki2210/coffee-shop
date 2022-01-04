@@ -29,13 +29,27 @@ html::-webkit-scrollbar-thumb{
 body{
     background: black;
 }
+section{
+    padding: 2rem 7%;
+}
+.heading{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+.heading span{
+    color: chocolate;
+    text-transform: uppercase;
+}
 .btn{
     margin-top: 1rem;
     display: inline-block;
     padding: .9rem 3rem;
     font-size: 1.7rem;
     color: white;
-    background: black;
+    background:chocolate;
     cursor: pointer;
 }
 .btn:hover{
@@ -91,7 +105,9 @@ body{
     align-items: center;
     transform: scaleY(0);
     transform-origin: top;
-
+}
+.header .search-form.active{
+    transform: scaleY(1);
 }
 .header .search-form input{
     height: 100%;
@@ -113,11 +129,14 @@ body{
 .header .cart-items-container{
     position: absolute;
     top: 100%;
-    right: 0;
+    right: -100%;
     height: calc(100vh - 9.5rem);
     width: 35rem;
     background: white;
     padding: 0 1.5rem;
+}
+.header .cart-items-container.active{
+    right: 0;
 }
 .header .cart-items-container .cart-item{
     position: relative;
@@ -148,4 +167,124 @@ body{
 .header .cart-items-container .cart-item .content .price{
     font-size: 1.5rem;
     color: sienna;
+}
+.header .cart-items-container .btn{
+    width: 100%;
+    text-align: center;
+}
+/* home scetion */
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(..//img/coffee-beans-hot-cup-coffee-bag-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    max-width: 60rem;
+}
+.home .content h3{
+    font-size: 5.5rem;
+    text-transform: uppercase;
+    color: white;
+}
+.home .content p{
+    font-size: 2rem;
+    color: white;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+/* about section */
+.about .row{
+    display: flex;
+    align-items: center;
+    background: black;
+    flex-wrap: wrap;
+}
+.about .row .image{
+    flex: 1 1 45rem;
+}
+.about .row .image img{
+    width: 100%;
+}
+.about .row .content{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color: white;
+}
+.about .row .content p{
+    font-size: 1.6rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 1.8sss;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:991px) {
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+@media (max-width:768px) {
+    #menu-btn{
+        display:inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #ffffff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .header .navbar.active{
+        right: 0;
+    }
+    .header .navbar a{
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+        color: black;
+    }
+    .header .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+    .home .content p{
+        font-size: 1.5rem;
+    }
+}
+@media (max-width:450px) {
+    html{
+        font-size: 50%;
+    }
 }
